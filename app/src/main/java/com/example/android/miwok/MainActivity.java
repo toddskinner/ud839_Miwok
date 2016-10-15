@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         family.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                Intent familyIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
                 startActivity(familyIntent);
             }
         });
