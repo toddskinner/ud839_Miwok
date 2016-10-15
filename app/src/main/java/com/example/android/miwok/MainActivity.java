@@ -15,8 +15,12 @@
  */
 package com.example.android.miwok;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,5 +30,58 @@ public class MainActivity extends AppCompatActivity {
 
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+
+        //SET NUMBERS CLICKLISTENER
+        //Find numbers view
+        TextView numbers = (TextView) findViewById(R.id.numbers);
+
+        //Set clicklistener on that view
+        numbers.setOnClickListener(new View.OnClickListener() {
+            // The code in this method will be executed when the numbers View is clicked on.
+            @Override
+            public void onClick(View view) {
+                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+                startActivity(numbersIntent);
+            }
+        });
+
+        //SET COLORS CLICKLISTENER
+        //Find colors view
+        TextView colors = (TextView) findViewById(R.id.colors);
+
+        //Set clicklistener on that view
+        colors.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(colorsIntent);
+            }
+        });
+
+        //SET PHRASES CLICKLISTENER
+        //Find phrases view
+        TextView phrases = (TextView) findViewById(R.id.phrases);
+
+        //Set clicklistener on that view
+        phrases.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(phrasesIntent);
+            }
+        });
+
+        //SET FAMILY CLICKLISTENER
+        //Find phrases view
+        TextView family = (TextView) findViewById(R.id.family);
+
+        //Set clicklistener on that view
+        phrases.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                Intent familyIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(familyIntent);
+            }
+        });
     }
 }
