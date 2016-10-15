@@ -72,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //SET FAMILY CLICKLISTENER
-        //Find phrases view
+        //Find family view
         TextView family = (TextView) findViewById(R.id.family);
 
         //Set clicklistener on that view
-        phrases.setOnClickListener(new View.OnClickListener(){
+        family.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 Intent familyIntent = new Intent(MainActivity.this, PhrasesActivity.class);
