@@ -2,6 +2,7 @@ package com.example.android.miwok;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ public class FamilyActivity extends AppCompatActivity {
         words.add(new Word("ama", "grandmother", R.drawable.family_grandmother));
         words.add(new Word("paapa", "grandfather", R.drawable.family_grandfather));
 
-        WordAdapter adapter = new WordAdapter(this, words);
+        WordAdapter adapter = new WordAdapter(this, words, R.color.category_family);
         ListView listView = (ListView) findViewById(R.id.list);
         listView.setAdapter(adapter);
     }
