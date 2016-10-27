@@ -11,22 +11,25 @@ public class Word {
     private String mEnglishTranslation;
     private int mImageResourceID = NO_IMAGE_PROVIDED;
     private static final int NO_IMAGE_PROVIDED = -1;
+    private int mAudioResourceID;
 
     /**
      * Constructs a new Word with initial values for miwok translation and english translation.
      */
-    public Word(String miwokTranslation, String englishTranslation){
+    public Word(String miwokTranslation, String englishTranslation, int audioResourceID){
         mMiwokTranslation = miwokTranslation;
         mEnglishTranslation = englishTranslation;
+        mAudioResourceID = audioResourceID;
     }
 
     /**
      * Constructs a new Word with initial values for miwok translation, english translation, and image resource ID.
      */
-    public Word(String miwokTranslation, String englishTranslation, int imageResourceID){
+    public Word(String miwokTranslation, String englishTranslation, int imageResourceID, int audioResourceID){
         mMiwokTranslation = miwokTranslation;
         mEnglishTranslation = englishTranslation;
         mImageResourceID = imageResourceID;
+        mAudioResourceID = audioResourceID;
     }
 
     /**
@@ -59,5 +62,9 @@ public class Word {
         {
             return true;
         }
+    }
+
+    public int getAudioResourceID(){
+        return mAudioResourceID;
     }
 }
