@@ -9,6 +9,8 @@ import android.content.Context;
 public class Word {
     private String mMiwokTranslation;
     private String mEnglishTranslation;
+    private int mImageResourceID = NO_IMAGE_PROVIDED;
+    private static final int NO_IMAGE_PROVIDED = -1;
 
     /**
      * Constructs a new Word with initial values for miwok translation and english translation.
@@ -16,6 +18,15 @@ public class Word {
     public Word(String miwokTranslation, String englishTranslation){
         mMiwokTranslation = miwokTranslation;
         mEnglishTranslation = englishTranslation;
+    }
+
+    /**
+     * Constructs a new Word with initial values for miwok translation, english translation, and image resource ID.
+     */
+    public Word(String miwokTranslation, String englishTranslation, int imageResourceID){
+        mMiwokTranslation = miwokTranslation;
+        mEnglishTranslation = englishTranslation;
+        mImageResourceID = imageResourceID;
     }
 
     /**
@@ -34,5 +45,19 @@ public class Word {
      */
     public String getEnglishTranslation(){
         return mEnglishTranslation;
+    }
+
+    public int getImageResourceID(){
+        return mImageResourceID;
+    }
+
+    public boolean hasImage(){
+        if(mImageResourceID == NO_IMAGE_PROVIDED){
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 }
