@@ -19,6 +19,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,57 +37,67 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
+        // Find the view pager that will allow the user to swipe between fragments
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+
+        // Create an adapter that knows which fragment should be shown on each page
+        SimpleFragmentPagerAdapter adapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager());
+
+        // Set the adapter onto the view pager
+        viewPager.setAdapter(adapter);
+
         //SET NUMBERS CLICKLISTENER
         //Find numbers view
-        TextView numbers = (TextView) findViewById(R.id.numbers);
+        //TextView numbers = (TextView) findViewById(R.id.numbers);
 
         //Set clicklistener on that view
-        numbers.setOnClickListener(new View.OnClickListener() {
-            // The code in this method will be executed when the numbers View is clicked on.
-            @Override
-            public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
-                startActivity(numbersIntent);
-            }
-        });
+//        numbers.setOnClickListener(new View.OnClickListener() {
+//            // The code in this method will be executed when the numbers View is clicked on.
+//            @Override
+//            public void onClick(View view) {
+//                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+//                startActivity(numbersIntent);
+//            }
+//        });
 
         //SET COLORS CLICKLISTENER
         //Find colors view
-        TextView colors = (TextView) findViewById(R.id.colors);
-
-        //Set clicklistener on that view
-        colors.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
-                startActivity(colorsIntent);
-            }
-        });
-
-        //SET PHRASES CLICKLISTENER
-        //Find phrases view
-        TextView phrases = (TextView) findViewById(R.id.phrases);
-
-        //Set clicklistener on that view
-        phrases.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
-                startActivity(phrasesIntent);
-            }
-        });
-
-        //SET FAMILY CLICKLISTENER
-        //Find family view
-        TextView family = (TextView) findViewById(R.id.family);
-
-        //Set clicklistener on that view
-        family.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
-                startActivity(familyIntent);
-            }
-        });
+//        TextView colors = (TextView) findViewById(R.id.colors);
+//
+//        //Set clicklistener on that view
+//        colors.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view){
+//                Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
+//                startActivity(colorsIntent);
+//            }
+//        });
+//
+//        //SET PHRASES CLICKLISTENER
+//        //Find phrases view
+//        TextView phrases = (TextView) findViewById(R.id.phrases);
+//
+//        //Set clicklistener on that view
+//        phrases.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view){
+//                Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+//                startActivity(phrasesIntent);
+//            }
+//        });
+//
+//        //SET FAMILY CLICKLISTENER
+//        //Find family view
+//        TextView family = (TextView) findViewById(R.id.family);
+//
+//        //Set clicklistener on that view
+//        family.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view){
+//                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
+//                startActivity(familyIntent);
+//            }
+//        });
     }
 }
+
